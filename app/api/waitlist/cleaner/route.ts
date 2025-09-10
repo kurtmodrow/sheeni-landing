@@ -15,32 +15,47 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Save to Supabase
-    const { data, error } = await supabase
-      .from('cleaner_waitlist')
-      .insert([
-        {
-          full_name: name,
-          email: email,
-          phone: phone || '',
-          location: location || '',
-          years_experience: experience || '',
-          services_offered: services || [],
-          availability: availability || '',
-          additional_info: message || null
-        }
-      ])
-      .select()
-    
-    if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json(
-        { error: 'Failed to save to database' },
-        { status: 500 }
-      )
+    // Save to Supabase if available
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('cleaner_waitlist')
+        .insert([
+          {
+            full_name: name,
+            email: email,
+            phone: phone || '',
+            location: location || '',
+            years_experience: experience || '',
+            services_offered: services || [],
+            availability: availability || '',
+            additional_info: message || null
+          }
+        ])
+        .select()
+      
+      if (error) {
+        console.error('Supabase error:', error)
+        return NextResponse.json(
+          { error: 'Failed to save to database' },
+          { status: 500 }
+        )
+      }
+      
+      console.log('Cleaner waitlist signup saved:', data)
+    } else {
+      // Fallback: just log the data if Supabase is not configured
+      console.log('Cleaner waitlist signup (no Supabase):', {
+        name,
+        email,
+        phone,
+        location,
+        experience,
+        services,
+        availability,
+        message,
+        timestamp: new Date().toISOString()
+      })
     }
-    
-    console.log('Cleaner waitlist signup saved:', data)
 
     return NextResponse.json(
       { 
