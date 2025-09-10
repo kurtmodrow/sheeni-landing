@@ -1,10 +1,15 @@
 import UserFlowSelector from '@/components/UserFlowSelector'
 import StarDecoration from '@/components/StarDecoration'
+import LanguageToggle from '@/components/LanguageToggle'
+import { useLanguage } from '@/lib/LanguageContext'
 import Image from 'next/image'
 
 export default function Home() {
+  const { t } = useLanguage()
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <LanguageToggle />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -12,10 +17,10 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
               <div className="flex-1">
                 <h1 className="text-4xl md:text-6xl font-bold text-gold-500 mb-2 font-poppins tracking-tight">
-                  Sheeni: The Cleaning Genie
+                  {t.title}
                 </h1>
                 <p className="text-2xl font-semibold text-gold-600 mb-4 font-nunito">
-                  ✨ Your Wish is Our Command ✨
+                  {t.subtitle}
                 </p>
               </div>
               <div className="flex-shrink-0">
@@ -30,9 +35,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Think "DoorDash for cleaning" — but with magic! Request a quick clean and nearby 
-              Genies will grant your cleaning wishes instantly. Register your interest now for 
-              priority access when we launch in your city!
+              {t.description}
             </p>
           </div>
 
@@ -75,16 +78,14 @@ export default function Home() {
                     height={20}
                     className="mr-3"
                   />
-                  <span className="text-gold-500">What Sheeni Is</span>
+                  <span className="text-gold-500">{t.whatSheeniIs}</span>
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Sheeni is a cleaning-on-demand platform — customers request the time they need and
-                  nearby cleaners (Genies) can accept jobs instantly. Today, Sheeni is a landing page
-                  to collect interest and validate demand before the full app launches.
+                  {t.whatSheeniDescription}
                 </p>
                 <div className="mt-4 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
                   <p className="text-yellow-800 font-semibold">
-                    🧞‍♀️ "Abracadabra, your mess is gone!" 🧞‍♂️
+                    {t.magicalQuote}
                   </p>
                 </div>
               </div>
@@ -102,7 +103,7 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-gold-500">Business Model</span>
+                <span className="text-gold-500">{t.businessModel}</span>
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
@@ -117,7 +118,7 @@ export default function Home() {
                 <div className="absolute top-4 right-4">
                   <StarDecoration size="sm" color="primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Customers</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.customers}</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
                   <li>Book exact time (1 hour, 2 hours, or longer)</li>
                   <li>Pay for time + tip upfront</li>
