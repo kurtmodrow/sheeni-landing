@@ -1,18 +1,21 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins, Nunito } from 'next/font/google'
+import { Poppins, Nunito } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/lib/LanguageContext'
 
-const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ 
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-poppins'
+  variable: '--font-poppins',
+  display: 'swap',
+  fallback: ['system-ui', 'arial']
 })
-const nunito = Nunito({ 
+const nunito = Nunito({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
-  variable: '--font-nunito'
+  variable: '--font-nunito',
+  display: 'swap',
+  fallback: ['system-ui', 'arial']
 })
 
 export const metadata: Metadata = {

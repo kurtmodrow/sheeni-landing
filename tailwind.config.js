@@ -7,10 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'poppins': ['var(--font-poppins)', 'sans-serif'],
-        'nunito': ['var(--font-nunito)', 'sans-serif'],
-      },
+              fontFamily: {
+                'poppins': ['var(--font-poppins)', 'system-ui', 'arial', 'sans-serif'],
+                'nunito': ['var(--font-nunito)', 'system-ui', 'arial', 'sans-serif'],
+              },
       colors: {
         primary: {
           50: '#eff6ff',
