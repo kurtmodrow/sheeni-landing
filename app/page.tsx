@@ -151,45 +151,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* The How */}
-          <section className="mt-12">
-            <div className="bg-white rounded-2xl shadow p-8 relative overflow-hidden">
-              <div className="absolute top-4 right-4">
-                <StarDecoration size="md" color="accent" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
-                <Image
-                  src="/logo.png"
-                  alt="Sheeni Logo"
-                  width={40}
-                  height={20}
-                  className="mr-3"
-                />
-                <span className="text-yellow-600">How the Magic Works</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Interest collection (today)</h3>
-                  <ul className="space-y-2 text-gray-700 list-disc list-inside">
-                    <li>Landing page with sign‑up forms for customers and cleaners</li>
-                    <li>Form submissions go to waitlist databases (via API)</li>
-                    <li>Clear expectations: not live yet; targets are goals, not guarantees</li>
-                    <li>Early joiners get first priority when their city launches</li>
-                    <li>Cleaners complete background checks before approval</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Launch (future)</h3>
-                  <ul className="space-y-2 text-gray-700 list-disc list-inside">
-                    <li>Open access to early sign‑ups first</li>
-                    <li>Complete background checks for cleaners</li>
-                    <li>Collect real usage data and iterate</li>
-                    <li>Expand service area step by step</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
 
           {/* The Why */}
           <section className="mt-12">
