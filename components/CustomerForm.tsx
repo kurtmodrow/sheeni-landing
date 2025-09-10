@@ -168,6 +168,7 @@ export default function CustomerForm() {
             <option value="">Select a service type</option>
             <option value="residential">Residential Cleaning</option>
             <option value="commercial">Commercial Cleaning</option>
+            <option value="airbnb">Airbnb/Vacation Rentals</option>
             <option value="deep">Deep Cleaning</option>
             <option value="move-in-out">Move-in/Move-out</option>
             <option value="post-construction">Post-Construction</option>

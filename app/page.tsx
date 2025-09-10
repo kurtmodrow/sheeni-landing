@@ -1,4 +1,5 @@
-import WaitlistForm from '@/components/WaitlistForm'
+import UserFlowSelector from '@/components/UserFlowSelector'
+import StarDecoration from '@/components/StarDecoration'
 import Image from 'next/image'
 
 export default function Home() {
@@ -29,26 +30,64 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Waitlist Form */}
-          <WaitlistForm />
+          {/* User Flow Selector */}
+          <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-8 relative overflow-hidden">
+            {/* Background stars */}
+            <div className="absolute top-4 left-4">
+              <StarDecoration size="sm" color="primary" />
+            </div>
+            <div className="absolute top-8 right-12">
+              <StarDecoration size="sm" color="accent" />
+            </div>
+            <div className="absolute bottom-6 left-8">
+              <StarDecoration size="sm" color="secondary" />
+            </div>
+            <div className="absolute bottom-4 right-6">
+              <StarDecoration size="sm" color="primary" />
+            </div>
+            
+            <UserFlowSelector />
+          </div>
 
           {/* What Sheeni Is */}
           <section className="mt-16">
-            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">What Sheeni Is</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Sheeni is a cleaning-on-demand platform — customers request the time they need and
-                nearby cleaners (Genies) can accept jobs instantly. Today, Sheeni is a landing page
-                to collect interest and validate demand before the full app launches.
-              </p>
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-8 relative overflow-hidden">
+              {/* Background stars */}
+              <div className="absolute top-6 right-6">
+                <StarDecoration size="md" color="primary" />
+              </div>
+              <div className="absolute bottom-4 left-6">
+                <StarDecoration size="sm" color="accent" />
+              </div>
+              
+              <div className="relative z-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
+                  <StarDecoration size="md" color="primary" className="mr-3" />
+                  What Sheeni Is
+                </h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Sheeni is a cleaning-on-demand platform — customers request the time they need and
+                  nearby cleaners (Genies) can accept jobs instantly. Today, Sheeni is a landing page
+                  to collect interest and validate demand before the full app launches.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Business Model */}
           <section className="mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Business Model</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center">
+                <StarDecoration size="md" color="secondary" className="mr-3" />
+                Business Model
+                <StarDecoration size="md" color="accent" className="ml-3" />
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-2xl shadow p-6">
+              <div className="bg-white rounded-2xl shadow p-6 relative">
+                <div className="absolute top-4 right-4">
+                  <StarDecoration size="sm" color="primary" />
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Customers</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
                   <li>Book exact time (1 hour, 2 hours, or longer)</li>
@@ -57,7 +96,10 @@ export default function Home() {
                   <li>Track ETA & communicate in-app (when live)</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-2xl shadow p-6">
+              <div className="bg-white rounded-2xl shadow p-6 relative">
+                <div className="absolute top-4 right-4">
+                  <StarDecoration size="sm" color="secondary" />
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Cleaners (Genies)</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
                   <li>Get notified of new jobs nearby</li>
@@ -67,7 +109,10 @@ export default function Home() {
                   <li>Background check required before approval</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-2xl shadow p-6">
+              <div className="bg-white rounded-2xl shadow p-6 relative">
+                <div className="absolute top-4 right-4">
+                  <StarDecoration size="sm" color="accent" />
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Revenue</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
                   <li>Platform fee/service charge per booking</li>
