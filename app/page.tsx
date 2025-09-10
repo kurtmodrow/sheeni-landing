@@ -9,24 +9,26 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            {/* Logo */}
-            <div className="mb-8">
-              <Image
-                src="/logo.png"
-                alt="Business Logo"
-                width={200}
-                height={100}
-                className="mx-auto"
-                priority
-              />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+              <div className="flex-1">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">
+                  Sheeni: The Cleaning Genie
+                </h1>
+                <p className="text-2xl font-semibold text-yellow-600 mb-4">
+                  ✨ Your Wish is Our Command ✨
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Sheeni Logo"
+                  width={300}
+                  height={150}
+                  className="max-w-full h-auto"
+                  priority
+                />
+              </div>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">
-              Sheeni: The Cleaning Genie
-            </h1>
-            <p className="text-2xl font-semibold text-yellow-600 mb-4">
-              ✨ Your Wish is Our Command ✨
-            </p>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Think "DoorDash for cleaning" — but with magic! Request a quick clean and nearby 
               Genies will grant your cleaning wishes instantly. Register your interest now for 
