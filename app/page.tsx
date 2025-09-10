@@ -16,22 +16,22 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-              <div className="flex-1">
-                <h1 className="text-4xl md:text-6xl font-bold text-gold-500 mb-2 font-poppins tracking-tight">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex-1 md:pr-8 text-center md:text-left">
+                <h1 className="text-4xl md:text-6xl font-bold text-gold-500 mb-3 font-poppins tracking-tight leading-tight">
                   {t.title}
                 </h1>
-                <p className="text-2xl font-semibold text-gold-600 mb-4 font-nunito">
+                <p className="text-xl md:text-2xl font-semibold text-gold-600 mb-6 font-nunito">
                   {t.subtitle}
                 </p>
               </div>
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 md:pl-4 order-first md:order-last">
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
-                  width={300}
-                  height={150}
-                  className="max-w-full h-auto"
+                  width={280}
+                  height={140}
+                  className="max-w-full h-auto drop-shadow-lg"
                   priority
                 />
               </div>
