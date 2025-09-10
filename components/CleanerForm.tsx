@@ -97,8 +97,8 @@ export default function CleanerForm() {
   return (
     <div>
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Join as a Cleaner</h2>
-        <p className="text-gray-600">Start earning with our cleaning platform</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">🧞‍♀️ Register as a Genie 🧞‍♂️</h2>
+        <p className="text-gray-600">Register your interest and get priority access to start earning with our cleaning platform!</p>
       </div>
 
       {submitStatus === 'success' && (
@@ -258,7 +258,7 @@ export default function CleanerForm() {
           disabled={isSubmitting}
           className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Joining Waitlist...' : 'Join Cleaner Waitlist'}
+          {isSubmitting ? 'Registering Interest...' : 'Register Interest'}
         </button>
       </form>
     </div>

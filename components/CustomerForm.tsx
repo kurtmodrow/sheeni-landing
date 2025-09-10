@@ -71,8 +71,8 @@ export default function CustomerForm() {
   return (
     <div>
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Join as a Customer</h2>
-        <p className="text-gray-600">Get notified when our cleaning services are available in your area</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">✨ Register as a Customer ✨</h2>
+        <p className="text-gray-600">Register your interest and get priority access when we launch in your area!</p>
       </div>
 
       {submitStatus === 'success' && (
@@ -196,7 +196,7 @@ export default function CustomerForm() {
           disabled={isSubmitting}
           className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Joining Waitlist...' : 'Join Customer Waitlist'}
+          {isSubmitting ? 'Registering Interest...' : 'Register Interest'}
         </button>
       </form>
     </div>

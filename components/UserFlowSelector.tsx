@@ -67,11 +67,14 @@ export default function UserFlowSelector() {
   return (
     <div className="text-center">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          How would you like to join Sheeni?
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          Register Your Interest
         </h2>
+        <p className="text-xl font-semibold text-yellow-600 mb-2">
+          🌟 Get Priority Access When We Launch! 🌟
+        </p>
         <p className="text-lg text-gray-600 mb-8">
-          Choose your path to be part of the cleaning revolution
+          Be among the first to experience the magic of Sheeni in your city
         </p>
       </div>
 
@@ -98,29 +101,33 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Book a Cleaning</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">✨ Register as a Customer ✨</h3>
               <p className="text-gray-700 mb-4">
-                Need a quick clean? Book exactly the time you need and get matched with verified cleaners in your area.
+                Ready to make your cleaning wishes come true? Register your interest and be first in line when we launch in your area!
               </p>
               
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>Residential & Airbnb cleaning</span>
+                  <span>🏠 Residential & Airbnb cleaning</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>Pay upfront with tips</span>
+                  <span>💳 Pay upfront with tips</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>Track cleaner ETA</span>
+                  <span>📍 Track Genie ETA</span>
+                </div>
+                <div className="flex items-center">
+                  <StarDecoration size="sm" color="primary" className="mr-2" />
+                  <span>⭐ Priority access when we launch</span>
                 </div>
               </div>
               
               <div className="mt-6">
                 <span className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                  Join as Customer
+                  Register Interest
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -151,29 +158,33 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Become a Cleaner</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">🧞‍♀️ Register as a Genie 🧞‍♂️</h3>
               <p className="text-gray-700 mb-4">
-                Join our network of verified cleaners and earn money on your own schedule with transparent pay.
+                Ready to grant cleaning wishes? Join our network of verified Genies and earn money on your own schedule!
               </p>
               
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>Flexible scheduling</span>
+                  <span>⏰ Flexible scheduling</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>See pay + tips upfront</span>
+                  <span>💰 See pay + tips upfront</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>Background check required</span>
+                  <span>🔒 Background check required</span>
+                </div>
+                <div className="flex items-center">
+                  <StarDecoration size="sm" color="secondary" className="mr-2" />
+                  <span>⭐ Priority access when we launch</span>
                 </div>
               </div>
               
               <div className="mt-6">
                 <span className="inline-flex items-center px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition-colors">
-                  Join as Cleaner
+                  Register Interest
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
