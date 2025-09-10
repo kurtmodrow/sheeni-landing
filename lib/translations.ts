@@ -41,16 +41,54 @@ export interface Translations {
   genies: string
   revenue: string
   
+  // Business Model Details
+  customerFeatures: {
+    bookExactTime: string
+    payUpfront: string
+    uploadPhotos: string
+    trackEta: string
+  }
+  genieFeatures: {
+    getNotified: string
+    seePayUpfront: string
+    claimJobs: string
+    flexibleScheduling: string
+    backgroundCheck: string
+  }
+  revenueFeatures: {
+    platformFee: string
+    subscriptions: string
+    premiumProfiles: string
+    priorityMatching: string
+  }
+  
   whyChooseSheeni: string
   forCustomers: string
   forGenies: string
   forSheeni: string
+  
+  // Why Choose Sheeni Details
+  whyChooseDetails: {
+    forCustomersDesc: string
+    forGeniesDesc: string
+    forSheeniDesc: string
+  }
   
   magicPromise: string
   registerInterestDesc: string
   under60Minutes: string
   earlyRegistrants: string
   backgroundCheckDesc: string
+  
+  // Magic Promise Details
+  magicPromiseDetails: {
+    registerInterestDesc: string
+    under60Minutes: string
+    earlyRegistrants: string
+    backgroundCheckDesc: string
+    magicalQuote1: string
+    magicalQuote2: string
+  }
   
   // Form labels
   fullName: string
@@ -141,16 +179,51 @@ export const translations: Record<Language, Translations> = {
     genies: "Cleaners (Genies)",
     revenue: "Revenue",
     
+    customerFeatures: {
+      bookExactTime: "Book exact time (1 hour, 2 hours, or longer)",
+      payUpfront: "Pay for time + tip upfront",
+      uploadPhotos: "Upload photos and describe the job",
+      trackEta: "Track ETA & communicate in-app (when live)"
+    },
+    genieFeatures: {
+      getNotified: "Get notified of new jobs nearby",
+      seePayUpfront: "See pay + tip upfront before accepting",
+      claimJobs: "Claim jobs Instacart‑style (first come, first serve)",
+      flexibleScheduling: "Flexible scheduling and transparent pay",
+      backgroundCheck: "Background check required before approval"
+    },
+    revenueFeatures: {
+      platformFee: "Platform fee/service charge per booking",
+      subscriptions: "Future: subscriptions for recurring cleans",
+      premiumProfiles: "Premium cleaner profiles",
+      priorityMatching: "Priority matching"
+    },
+    
     whyChooseSheeni: "Why Choose Sheeni?",
     forCustomers: "For customers",
     forGenies: "For cleaners",
     forSheeni: "For Sheeni",
+    
+    whyChooseDetails: {
+      forCustomersDesc: "Convenience for small or focused cleans that don't fit traditional services — as easy as food delivery.",
+      forGeniesDesc: "Empowerment: flexible work, transparent pay, ability to pick jobs, safety via verified backgrounds.",
+      forSheeniDesc: "Solves a common, repeatable problem (cleaning) with a scalable, tech-enabled marketplace."
+    },
     
     magicPromise: "The Magic Promise",
     registerInterestDesc: "✨ Register your interest — be the first to experience the magic of Sheeni in your area!",
     under60Minutes: "Our goal is under 60 minutes from wish to Genie on the way — not guaranteed at first, but you'll always get realistic ETAs.",
     earlyRegistrants: "⭐ Early registrants get first priority access when the app launches to create accounts and book jobs.",
     backgroundCheckDesc: "Genies who apply will undergo a background check before approval — ensuring safety and trust for everyone.",
+    
+    magicPromiseDetails: {
+      registerInterestDesc: "✨ Register your interest — be the first to experience the magic of Sheeni in your area!",
+      under60Minutes: "Our goal is under 60 minutes from wish to Genie on the way — not guaranteed at first, but you'll always get realistic ETAs.",
+      earlyRegistrants: "⭐ Early registrants get first priority access when the app launches to create accounts and book jobs.",
+      backgroundCheckDesc: "Genies who apply will undergo a background check before approval — ensuring safety and trust for everyone.",
+      magicalQuote1: "🧞‍♀️ \"Poof! Your cleaning problems disappear!\" 🧞‍♂️",
+      magicalQuote2: "🎭 \"The cleaning genie that grants your every wish!\""
+    },
     
     fullName: "Full Name",
     emailAddress: "Email Address",
@@ -242,16 +315,51 @@ export const translations: Record<Language, Translations> = {
     genies: "Limpiadores (Genios)",
     revenue: "Ingresos",
     
+    customerFeatures: {
+      bookExactTime: "Reserva tiempo exacto (1 hora, 2 horas, o más)",
+      payUpfront: "Paga por tiempo + propina por adelantado",
+      uploadPhotos: "Sube fotos y describe el trabajo",
+      trackEta: "Rastrea ETA y comunícate en la app (cuando esté activa)"
+    },
+    genieFeatures: {
+      getNotified: "Recibe notificaciones de trabajos cercanos",
+      seePayUpfront: "Ve pago + propina por adelantado antes de aceptar",
+      claimJobs: "Reclama trabajos estilo Instacart (primero en llegar, primero en ser servido)",
+      flexibleScheduling: "Horario flexible y pago transparente",
+      backgroundCheck: "Verificación de antecedentes requerida antes de aprobación"
+    },
+    revenueFeatures: {
+      platformFee: "Tarifa de plataforma/cargo por servicio por reserva",
+      subscriptions: "Futuro: suscripciones para limpiezas recurrentes",
+      premiumProfiles: "Perfiles premium de limpiadores",
+      priorityMatching: "Emparejamiento prioritario"
+    },
+    
     whyChooseSheeni: "¿Por Qué Elegir Sheeni?",
     forCustomers: "Para clientes",
     forGenies: "Para limpiadores",
     forSheeni: "Para Sheeni",
+    
+    whyChooseDetails: {
+      forCustomersDesc: "Conveniencia para limpiezas pequeñas o enfocadas que no encajan en servicios tradicionales — tan fácil como entrega de comida.",
+      forGeniesDesc: "Empoderamiento: trabajo flexible, pago transparente, capacidad de elegir trabajos, seguridad a través de antecedentes verificados.",
+      forSheeniDesc: "Resuelve un problema común y repetible (limpieza) con un mercado escalable y habilitado por tecnología."
+    },
     
     magicPromise: "La Promesa Mágica",
     registerInterestDesc: "✨ Registra tu interés — ¡sé el primero en experimentar la magia de Sheeni en tu área!",
     under60Minutes: "Nuestro objetivo es menos de 60 minutos desde el deseo hasta que el Genio esté en camino — no garantizado al principio, pero siempre obtendrás ETAs realistas.",
     earlyRegistrants: "⭐ Los primeros registrantes obtienen acceso prioritario cuando se lance la aplicación para crear cuentas y reservar trabajos.",
     backgroundCheckDesc: "Los Genios que se postulen pasarán por una verificación de antecedentes antes de la aprobación — asegurando seguridad y confianza para todos.",
+    
+    magicPromiseDetails: {
+      registerInterestDesc: "✨ Registra tu interés — ¡sé el primero en experimentar la magia de Sheeni en tu área!",
+      under60Minutes: "Nuestro objetivo es menos de 60 minutos desde el deseo hasta que el Genio esté en camino — no garantizado al principio, pero siempre obtendrás ETAs realistas.",
+      earlyRegistrants: "⭐ Los primeros registrantes obtienen acceso prioritario cuando se lance la aplicación para crear cuentas y reservar trabajos.",
+      backgroundCheckDesc: "Los Genios que se postulen pasarán por una verificación de antecedentes antes de la aprobación — asegurando seguridad y confianza para todos.",
+      magicalQuote1: "🧞‍♀️ \"¡Puf! ¡Tus problemas de limpieza desaparecen!\" 🧞‍♂️",
+      magicalQuote2: "🎭 \"¡El genio de la limpieza que concede todos tus deseos!\""
+    },
     
     fullName: "Nombre Completo",
     emailAddress: "Dirección de Email",

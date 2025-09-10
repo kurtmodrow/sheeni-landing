@@ -122,35 +122,35 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.customers}</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
-                  <li>Book exact time (1 hour, 2 hours, or longer)</li>
-                  <li>Pay for time + tip upfront</li>
-                  <li>Upload photos and describe the job</li>
-                  <li>Track ETA & communicate in-app (when live)</li>
+                  <li>{t.customerFeatures.bookExactTime}</li>
+                  <li>{t.customerFeatures.payUpfront}</li>
+                  <li>{t.customerFeatures.uploadPhotos}</li>
+                  <li>{t.customerFeatures.trackEta}</li>
                 </ul>
               </div>
               <div className="bg-white rounded-2xl shadow p-6 relative">
                 <div className="absolute top-4 right-4">
                   <StarDecoration size="sm" color="secondary" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Cleaners (Genies)</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.genies}</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
-                  <li>Get notified of new jobs nearby</li>
-                  <li>See pay + tip upfront before accepting</li>
-                  <li>Claim jobs Instacart‑style (first come, first serve)</li>
-                  <li>Flexible scheduling and transparent pay</li>
-                  <li>Background check required before approval</li>
+                  <li>{t.genieFeatures.getNotified}</li>
+                  <li>{t.genieFeatures.seePayUpfront}</li>
+                  <li>{t.genieFeatures.claimJobs}</li>
+                  <li>{t.genieFeatures.flexibleScheduling}</li>
+                  <li>{t.genieFeatures.backgroundCheck}</li>
                 </ul>
               </div>
               <div className="bg-white rounded-2xl shadow p-6 relative">
                 <div className="absolute top-4 right-4">
                   <StarDecoration size="sm" color="accent" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Revenue</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.revenue}</h3>
                 <ul className="space-y-2 text-gray-700 list-disc list-inside">
-                  <li>Platform fee/service charge per booking</li>
-                  <li>Future: subscriptions for recurring cleans</li>
-                  <li>Premium cleaner profiles</li>
-                  <li>Priority matching</li>
+                  <li>{t.revenueFeatures.platformFee}</li>
+                  <li>{t.revenueFeatures.subscriptions}</li>
+                  <li>{t.revenueFeatures.premiumProfiles}</li>
+                  <li>{t.revenueFeatures.priorityMatching}</li>
                 </ul>
               </div>
             </div>
@@ -171,20 +171,20 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-gold-500">Why Choose Sheeni?</span>
+                <span className="text-gold-500">{t.whyChooseSheeni}</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For customers</h3>
-                  <p className="text-gray-700">Convenience for small or focused cleans that don’t fit traditional services — as easy as food delivery.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{t.forCustomers}</h3>
+                  <p className="text-gray-700">{t.whyChooseDetails.forCustomersDesc}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For cleaners</h3>
-                  <p className="text-gray-700">Empowerment with flexible work, transparent tips, and choice of jobs — backed by verified backgrounds.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{t.forGenies}</h3>
+                  <p className="text-gray-700">{t.whyChooseDetails.forGeniesDesc}</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For Sheeni</h3>
-                  <p className="text-gray-700">Solves a common, repeatable problem with a scalable, tech‑enabled marketplace.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{t.forSheeni}</h3>
+                  <p className="text-gray-700">{t.whyChooseDetails.forSheeniDesc}</p>
                 </div>
               </div>
             </div>
@@ -207,24 +207,24 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-gold-500">The Magic Promise</span>
+                <span className="text-gold-500">{t.magicPromise}</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3">
-                  <p className="text-gray-800"><span className="font-semibold text-yellow-600">✨ Register your interest</span> — be the first to experience the magic of Sheeni in your area!</p>
-                  <p className="text-gray-800">Our goal is <span className="font-semibold text-yellow-600">under 60 minutes</span> from wish to Genie on the way — not guaranteed at first, but you'll always get realistic ETAs.</p>
+                  <p className="text-gray-800"><span className="font-semibold text-yellow-600">✨ {t.magicPromiseDetails.registerInterestDesc.split('—')[0]}</span> — {t.magicPromiseDetails.registerInterestDesc.split('—')[1]}</p>
+                  <p className="text-gray-800">{t.magicPromiseDetails.under60Minutes}</p>
                   <div className="p-3 bg-blue-50 rounded-lg">
                     <p className="text-blue-800 font-semibold text-sm">
-                      🧞‍♀️ "Poof! Your cleaning problems disappear!" 🧞‍♂️
+                      {t.magicPromiseDetails.magicalQuote1}
                     </p>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <p className="text-gray-800"><span className="font-semibold text-yellow-600">⭐ Early registrants</span> get first priority access when the app launches to create accounts and book jobs.</p>
-                  <p className="text-gray-800">Genies who apply will undergo a <span className="font-semibold text-yellow-600">background check</span> before approval — ensuring safety and trust for everyone.</p>
+                  <p className="text-gray-800"><span className="font-semibold text-yellow-600">⭐ {t.magicPromiseDetails.earlyRegistrants.split(' ')[0]} {t.magicPromiseDetails.earlyRegistrants.split(' ')[1]}</span> {t.magicPromiseDetails.earlyRegistrants.split('⭐ ')[1]}</p>
+                  <p className="text-gray-800">{t.magicPromiseDetails.backgroundCheckDesc}</p>
                   <div className="p-3 bg-purple-50 rounded-lg">
                     <p className="text-purple-800 font-semibold text-sm">
-                      🎭 "The cleaning genie that grants your every wish!"
+                      {t.magicPromiseDetails.magicalQuote2}
                     </p>
                   </div>
                 </div>
