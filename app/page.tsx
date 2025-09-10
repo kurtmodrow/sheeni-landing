@@ -1,3 +1,5 @@
+'use client'
+
 import UserFlowSelector from '@/components/UserFlowSelector'
 import StarDecoration from '@/components/StarDecoration'
 import LanguageToggle from '@/components/LanguageToggle'
