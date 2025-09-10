@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,43 +15,32 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Here you would typically save to a database
-    // For now, we'll just log the data
-    console.log('Cleaner waitlist signup:', {
-      email,
-      name,
-      phone,
-      location,
-      experience,
-      services,
-      availability,
-      message,
-      timestamp: new Date().toISOString()
-    })
-
-    // Simulate API call to external service if NEXT_PUBLIC_API_BASE is set
-    const apiBase = process.env.NEXT_PUBLIC_API_BASE
-    if (apiBase) {
-      try {
-        const response = await fetch(`${apiBase}/api/waitlist/cleaner`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        })
-        
-        if (!response.ok) {
-          throw new Error('External API call failed')
+    // Save to Supabase
+    const { data, error } = await supabase
+      .from('cleaner_waitlist')
+      .insert([
+        {
+          full_name: name,
+          email: email,
+          phone: phone || '',
+          location: location || '',
+          years_experience: experience || '',
+          services_offered: services || [],
+          availability: availability || '',
+          additional_info: message || null
         }
-      } catch (error) {
-        console.error('External API call failed:', error)
-        return NextResponse.json(
-          { error: 'Failed to process request' },
-          { status: 500 }
-        )
-      }
+      ])
+      .select()
+    
+    if (error) {
+      console.error('Supabase error:', error)
+      return NextResponse.json(
+        { error: 'Failed to save to database' },
+        { status: 500 }
+      )
     }
+    
+    console.log('Cleaner waitlist signup saved:', data)
 
     return NextResponse.json(
       { 

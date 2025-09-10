@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,41 +15,30 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Here you would typically save to a database
-    // For now, we'll just log the data
-    console.log('Customer waitlist signup:', {
-      email,
-      name,
-      phone,
-      location,
-      serviceType,
-      message,
-      timestamp: new Date().toISOString()
-    })
-
-    // Simulate API call to external service if NEXT_PUBLIC_API_BASE is set
-    const apiBase = process.env.NEXT_PUBLIC_API_BASE
-    if (apiBase) {
-      try {
-        const response = await fetch(`${apiBase}/api/waitlist/customer`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        })
-        
-        if (!response.ok) {
-          throw new Error('External API call failed')
+    // Save to Supabase
+    const { data, error } = await supabase
+      .from('customer_waitlist')
+      .insert([
+        {
+          full_name: name,
+          email: email,
+          phone: phone || '',
+          location: location || '',
+          service_type: serviceType || '',
+          additional_message: message || null
         }
-      } catch (error) {
-        console.error('External API call failed:', error)
-        return NextResponse.json(
-          { error: 'Failed to process request' },
-          { status: 500 }
-        )
-      }
+      ])
+      .select()
+    
+    if (error) {
+      console.error('Supabase error:', error)
+      return NextResponse.json(
+        { error: 'Failed to save to database' },
+        { status: 500 }
+      )
     }
+    
+    console.log('Customer waitlist signup saved:', data)
 
     return NextResponse.json(
       { 
