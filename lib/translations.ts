@@ -7,7 +7,7 @@ export interface Translations {
   description: string
   
   // User Flow
-  registerInterest: string
+  registerInterestTitle: string
   priorityAccess: string
   beFirstToExperience: string
   
@@ -110,7 +110,7 @@ export const translations: Record<Language, Translations> = {
     subtitle: "✨ Your Wish is Our Command ✨",
     description: "Think \"DoorDash for cleaning\" — but with magic! Request a quick clean and nearby Genies will grant your cleaning wishes instantly. Register your interest now for priority access when we launch in your city!",
     
-    registerInterest: "Register Your Interest",
+    registerInterestTitle: "Register Your Interest",
     priorityAccess: "🌟 Get Priority Access When We Launch! 🌟",
     beFirstToExperience: "Be among the first to experience the magic of Sheeni in your city",
     
@@ -211,7 +211,7 @@ export const translations: Record<Language, Translations> = {
     subtitle: "✨ Tu Deseo es Nuestra Orden ✨",
     description: "Piensa en \"DoorDash para limpieza\" — ¡pero con magia! Solicita una limpieza rápida y los Genios cercanos concederán tus deseos de limpieza al instante. ¡Registra tu interés ahora para acceso prioritario cuando lancemos en tu ciudad!",
     
-    registerInterest: "Registra Tu Interés",
+    registerInterestTitle: "Registra Tu Interés",
     priorityAccess: "🌟 ¡Obtén Acceso Prioritario Cuando Lancemos! 🌟",
     beFirstToExperience: "Sé de los primeros en experimentar la magia de Sheeni en tu ciudad",
     

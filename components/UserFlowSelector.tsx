@@ -49,7 +49,7 @@ export default function UserFlowSelector() {
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to options
+          {t.backToOptions}
         </button>
         
         {/* Cleaner form with stars */}
@@ -70,13 +70,13 @@ export default function UserFlowSelector() {
     <div className="text-center">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2 font-poppins">
-          Register Your Interest
+          {t.registerInterestTitle}
         </h2>
         <p className="text-xl font-semibold text-gold-600 mb-2 font-nunito">
-          🌟 Get Priority Access When We Launch! 🌟
+          {t.priorityAccess}
         </p>
         <p className="text-lg text-gray-600 mb-8">
-          Be among the first to experience the magic of Sheeni in your city
+          {t.beFirstToExperience}
         </p>
       </div>
 
@@ -103,33 +103,33 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">✨ Register as a Customer ✨</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">{t.registerAsCustomer}</h3>
               <p className="text-gray-700 mb-4">
-                Ready to make your cleaning wishes come true? Register your interest and be first in line when we launch in your area!
+                {t.customerDescription}
               </p>
               
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>🏠 Residential & Airbnb cleaning</span>
+                  <span>{t.customerFeatures.residential}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>💳 Pay upfront with tips</span>
+                  <span>{t.customerFeatures.payUpfront}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>📍 Track Genie ETA</span>
+                  <span>{t.customerFeatures.trackEta}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>⭐ Priority access when we launch</span>
+                  <span>{t.customerFeatures.priorityAccess}</span>
                 </div>
               </div>
               
               <div className="mt-6">
                 <span className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                  Register Interest
+                  {t.registerInterest}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -160,33 +160,33 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">🧞‍♀️ Register as a Genie 🧞‍♂️</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">{t.registerAsGenie}</h3>
               <p className="text-gray-700 mb-4">
-                Ready to grant cleaning wishes? Join our network of verified Genies and earn money on your own schedule!
+                {t.genieDescription}
               </p>
               
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>⏰ Flexible scheduling</span>
+                  <span>{t.genieFeatures.flexibleScheduling}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>💰 See pay + tips upfront</span>
+                  <span>{t.genieFeatures.seePayUpfront}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>🔒 Background check required</span>
+                  <span>{t.genieFeatures.backgroundCheck}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>⭐ Priority access when we launch</span>
+                  <span>{t.genieFeatures.priorityAccess}</span>
                 </div>
               </div>
               
               <div className="mt-6">
                 <span className="inline-flex items-center px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 transition-colors">
-                  Register Interest
+                  {t.registerInterest}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
