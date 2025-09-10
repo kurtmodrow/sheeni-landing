@@ -11,10 +11,10 @@ export default function Home() {
           <div className="text-center mb-16">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
               <div className="flex-1">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2">
+                <h1 className="text-4xl md:text-6xl font-bold text-gold-500 mb-2 font-poppins tracking-tight">
                   Sheeni: The Cleaning Genie
                 </h1>
-                <p className="text-2xl font-semibold text-yellow-600 mb-4">
+                <p className="text-2xl font-semibold text-gold-600 mb-4 font-nunito">
                   ✨ Your Wish is Our Command ✨
                 </p>
               </div>
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
               
               <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center font-poppins">
                   <Image
                     src="/logo.png"
                     alt="Sheeni Logo"
@@ -75,7 +75,7 @@ export default function Home() {
                     height={20}
                     className="mr-3"
                   />
-                  <span className="text-yellow-600">What Sheeni Is</span>
+                  <span className="text-gold-500">What Sheeni Is</span>
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
                   Sheeni is a cleaning-on-demand platform — customers request the time they need and
@@ -94,7 +94,7 @@ export default function Home() {
           {/* Business Model */}
           <section className="mt-12">
             <div className="text-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 flex items-center justify-center font-poppins">
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
@@ -102,7 +102,7 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-yellow-600">Business Model</span>
+                <span className="text-gold-500">Business Model</span>
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
@@ -160,7 +160,7 @@ export default function Home() {
               <div className="absolute top-4 left-4">
                 <StarDecoration size="md" color="primary" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center font-poppins">
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
@@ -168,7 +168,7 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-yellow-600">Why Choose Sheeni?</span>
+                <span className="text-gold-500">Why Choose Sheeni?</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
@@ -196,7 +196,7 @@ export default function Home() {
               <div className="absolute bottom-4 left-6">
                 <StarDecoration size="md" color="secondary" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 flex items-center font-poppins">
                 <Image
                   src="/logo.png"
                   alt="Sheeni Logo"
@@ -204,7 +204,7 @@ export default function Home() {
                   height={20}
                   className="mr-3"
                 />
-                <span className="text-yellow-600">The Magic Promise</span>
+                <span className="text-gold-500">The Magic Promise</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-3">

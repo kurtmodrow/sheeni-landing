@@ -67,10 +67,10 @@ export default function UserFlowSelector() {
   return (
     <div className="text-center">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2 font-poppins">
           Register Your Interest
         </h2>
-        <p className="text-xl font-semibold text-yellow-600 mb-2">
+        <p className="text-xl font-semibold text-gold-600 mb-2 font-nunito">
           🌟 Get Priority Access When We Launch! 🌟
         </p>
         <p className="text-lg text-gray-600 mb-8">
@@ -101,7 +101,7 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">✨ Register as a Customer ✨</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">✨ Register as a Customer ✨</h3>
               <p className="text-gray-700 mb-4">
                 Ready to make your cleaning wishes come true? Register your interest and be first in line when we launch in your area!
               </p>
@@ -158,7 +158,7 @@ export default function UserFlowSelector() {
                 </svg>
               </div>
               
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">🧞‍♀️ Register as a Genie 🧞‍♂️</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 font-poppins">🧞‍♀️ Register as a Genie 🧞‍♂️</h3>
               <p className="text-gray-700 mb-4">
                 Ready to grant cleaning wishes? Join our network of verified Genies and earn money on your own schedule!
               </p>

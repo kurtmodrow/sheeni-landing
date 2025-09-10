@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'nunito': ['var(--font-nunito)', 'sans-serif'],
+      },
       colors: {
         primary: {
           50: '#eff6ff',
@@ -14,6 +18,11 @@ module.exports = {
           500: '#3b82f6',
           600: '#2563eb',
           700: '#1d4ed8',
+        },
+        gold: {
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
         },
       },
     },
