@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             {/* Logo */}
             <div className="mb-8">
               <Image
@@ -21,17 +21,129 @@ export default function Home() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-              Welcome to{' '}
-              <span className="text-primary-600">Cursor Brief</span>
+              Sheeni — Cleaning On Demand
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join our waitlist and be the first to experience our revolutionary platform
-              connecting customers with professional cleaners.
+              Think "DoorDash for cleaning." Request a quick clean and nearby cleaners (Genies)
+              can accept instantly. We're collecting interest now to launch in the right cities.
             </p>
           </div>
 
           {/* Waitlist Form */}
           <WaitlistForm />
+
+          {/* What Sheeni Is */}
+          <section className="mt-16">
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">What Sheeni Is</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Sheeni is a cleaning-on-demand platform — customers request the time they need and
+                nearby cleaners (Genies) can accept jobs instantly. Today, Sheeni is a landing page
+                to collect interest and validate demand before the full app launches.
+              </p>
+            </div>
+          </section>
+
+          {/* Business Model */}
+          <section className="mt-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Business Model</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-2xl shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Customers</h3>
+                <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                  <li>Book exact time (1 hour, 2 hours, or longer)</li>
+                  <li>Pay for time + tip upfront</li>
+                  <li>Upload photos and describe the job</li>
+                  <li>Track ETA & communicate in-app (when live)</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-2xl shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Cleaners (Genies)</h3>
+                <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                  <li>Get notified of new jobs nearby</li>
+                  <li>See pay + tip upfront before accepting</li>
+                  <li>Claim jobs Instacart‑style (first come, first serve)</li>
+                  <li>Flexible scheduling and transparent pay</li>
+                  <li>Background check required before approval</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-2xl shadow p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Revenue</h3>
+                <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                  <li>Platform fee/service charge per booking</li>
+                  <li>Future: subscriptions for recurring cleans</li>
+                  <li>Premium cleaner profiles</li>
+                  <li>Priority matching</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* The How */}
+          <section className="mt-12">
+            <div className="bg-white rounded-2xl shadow p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Interest collection (today)</h3>
+                  <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                    <li>Landing page with sign‑up forms for customers and cleaners</li>
+                    <li>Form submissions go to waitlist databases (via API)</li>
+                    <li>Clear expectations: not live yet; targets are goals, not guarantees</li>
+                    <li>Early joiners get first priority when their city launches</li>
+                    <li>Cleaners complete background checks before approval</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Launch (future)</h3>
+                  <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                    <li>Open access to early sign‑ups first</li>
+                    <li>Complete background checks for cleaners</li>
+                    <li>Collect real usage data and iterate</li>
+                    <li>Expand service area step by step</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* The Why */}
+          <section className="mt-12">
+            <div className="bg-white rounded-2xl shadow p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Sheeni</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For customers</h3>
+                  <p className="text-gray-700">Convenience for small or focused cleans that don’t fit traditional services — as easy as food delivery.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For cleaners</h3>
+                  <p className="text-gray-700">Empowerment with flexible work, transparent tips, and choice of jobs — backed by verified backgrounds.</p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">For Sheeni</h3>
+                  <p className="text-gray-700">Solves a common, repeatable problem with a scalable, tech‑enabled marketplace.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Key Messaging */}
+          <section className="mt-12">
+            <div className="bg-white rounded-2xl shadow p-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Key Landing Page Messaging</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <p className="text-gray-800"><span className="font-semibold">Join the waitlist</span> — be the first to try Sheeni in your area.</p>
+                  <p className="text-gray-800">Our goal is <span className="font-semibold">under 60 minutes</span> from request to cleaner on the way — not guaranteed at first, but you’ll always get realistic ETAs.</p>
+                </div>
+                <div className="space-y-3">
+                  <p className="text-gray-800"><span className="font-semibold">Early sign‑ups</span> get first priority access when the app launches to create accounts and book jobs.</p>
+                  <p className="text-gray-800">Cleaners who apply will undergo a <span className="font-semibold">background check</span> before approval — ensuring safety and trust.</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
