@@ -37,6 +37,14 @@ export default function CustomerForm() {
     setSubmitStatus('idle')
     setErrorMessage('')
 
+    // Basic validation
+    if (!formData.name || !formData.email) {
+      setSubmitStatus('error')
+      setErrorMessage('Name and email are required')
+      setIsSubmitting(false)
+      return
+    }
+
     console.log('Submitting customer form:', formData)
 
     try {
@@ -84,7 +92,7 @@ export default function CustomerForm() {
 
       {submitStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800 font-medium">✅ Successfully joined the waitlist!</p>
+          <p className="text-green-800 font-medium">{t.successMessage}</p>
         </div>
       )}
 
