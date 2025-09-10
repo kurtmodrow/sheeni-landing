@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 interface CustomerFormData {
   email: string
@@ -12,6 +13,7 @@ interface CustomerFormData {
 }
 
 export default function CustomerForm() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState<CustomerFormData>({
     email: '',
     name: '',
@@ -35,6 +37,8 @@ export default function CustomerForm() {
     setSubmitStatus('idle')
     setErrorMessage('')
 
+    console.log('Submitting customer form:', formData)
+
     try {
       const response = await fetch('/api/waitlist/customer', {
         method: 'POST',
@@ -44,7 +48,9 @@ export default function CustomerForm() {
         body: JSON.stringify(formData),
       })
 
+      console.log('Response status:', response.status)
       const data = await response.json()
+      console.log('Response data:', data)
 
       if (response.ok) {
         setSubmitStatus('success')
@@ -61,6 +67,7 @@ export default function CustomerForm() {
         setErrorMessage(data.error || 'Something went wrong')
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
       setErrorMessage('Network error. Please try again.')
     } finally {
@@ -71,8 +78,8 @@ export default function CustomerForm() {
   return (
     <div>
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">✨ Register as a Customer ✨</h2>
-        <p className="text-gray-600">Register your interest and get priority access when we launch in your area!</p>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">{t.registerAsCustomer}</h2>
+        <p className="text-gray-600">{t.customerDescription}</p>
       </div>
 
       {submitStatus === 'success' && (
@@ -91,7 +98,7 @@ export default function CustomerForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Full Name *
+              {t.fullName} *
             </label>
             <input
               type="text"
@@ -107,7 +114,7 @@ export default function CustomerForm() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email Address *
+              {t.emailAddress} *
             </label>
             <input
               type="email"
@@ -125,7 +132,7 @@ export default function CustomerForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number
+              {t.phoneNumber}
             </label>
             <input
               type="tel"
@@ -140,7 +147,7 @@ export default function CustomerForm() {
 
           <div>
             <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
-              Location
+              {t.location}
             </label>
             <input
               type="text"
@@ -155,9 +162,9 @@ export default function CustomerForm() {
         </div>
 
         <div>
-          <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-1">
-            Service Type
-          </label>
+            <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-1">
+              {t.serviceType}
+            </label>
           <select
             id="serviceType"
             name="serviceType"
@@ -166,19 +173,19 @@ export default function CustomerForm() {
             className="input-field"
           >
             <option value="">Select a service type</option>
-            <option value="residential">Residential Cleaning</option>
-            <option value="commercial">Commercial Cleaning</option>
-            <option value="airbnb">Airbnb/Vacation Rentals</option>
-            <option value="deep">Deep Cleaning</option>
-            <option value="move-in-out">Move-in/Move-out</option>
-            <option value="post-construction">Post-Construction</option>
-            <option value="other">Other</option>
+            <option value="residential">{t.serviceTypes.residential}</option>
+            <option value="commercial">{t.serviceTypes.commercial}</option>
+            <option value="airbnb">{t.serviceTypes.airbnb}</option>
+            <option value="deep">{t.serviceTypes.deep}</option>
+            <option value="move-in-out">{t.serviceTypes.moveInOut}</option>
+            <option value="post-construction">{t.serviceTypes.postConstruction}</option>
+            <option value="other">{t.serviceTypes.other}</option>
           </select>
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Additional Message
+            {t.additionalMessage}
           </label>
           <textarea
             id="message"
@@ -196,7 +203,7 @@ export default function CustomerForm() {
           disabled={isSubmitting}
           className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Registering Interest...' : 'Register Interest'}
+          {isSubmitting ? t.registeringInterest : t.registerInterest}
         </button>
       </form>
     </div>
