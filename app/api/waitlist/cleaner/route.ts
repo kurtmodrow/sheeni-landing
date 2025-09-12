@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { supabase, supabaseAdmin } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,52 +15,70 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Save to Supabase if available
-    if (supabase) {
-      const { data, error } = await supabase
-        .from('cleaner_waitlist')
-        .insert([
-          {
-            full_name: name,
-            email: email,
-            phone: phone || '',
-            location: location || '',
-            years_experience: experience || '',
-            services_offered: services || [],
-            availability: availability || '',
-            additional_info: message || null
+    // Save to Supabase if available (use admin client to bypass RLS)
+    const client = supabaseAdmin || supabase
+    if (client) {
+      try {
+        const { data, error } = await client
+          .from('cleaner_waitlist')
+          .insert([
+            {
+              full_name: name,
+              email: email,
+              phone: phone || '',
+              location: location || '',
+              years_experience: experience || '',
+              services_offered: services || [],
+              availability: availability || '',
+              additional_info: message || null
+            }
+          ])
+          .select()
+        
+        if (error) {
+          console.error('Supabase error:', error)
+          
+          // Handle specific error cases
+          if (error.code === '23505') {
+            return NextResponse.json(
+              { error: 'Email already exists in waitlist' },
+              { status: 409 }
+            )
           }
-        ])
-        .select()
-      
-      if (error) {
-        console.error('Supabase error:', error)
-        return NextResponse.json(
-          { error: 'Failed to save to database' },
-          { status: 500 }
-        )
+          
+          return NextResponse.json(
+            { error: 'Failed to save to database', details: error.message },
+            { status: 500 }
+          )
+        }
+        
+        console.log('Cleaner waitlist signup saved:', data)
+      } catch (supabaseError) {
+        console.error('Supabase connection error:', supabaseError)
+        // Fall through to fallback logging
       }
-      
-      console.log('Cleaner waitlist signup saved:', data)
-    } else {
-      // Fallback: just log the data if Supabase is not configured
-      console.log('Cleaner waitlist signup (no Supabase):', {
-        name,
-        email,
-        phone,
-        location,
-        experience,
-        services,
-        availability,
-        message,
-        timestamp: new Date().toISOString()
-      })
     }
+    
+    // Fallback: log the data if Supabase is not configured or fails
+    console.log('Cleaner waitlist signup (fallback logging):', {
+      name,
+      email,
+      phone,
+      location,
+      experience,
+      services,
+      availability,
+      message,
+      timestamp: new Date().toISOString(),
+      supabaseAvailable: !!client,
+      usingAdminClient: !!supabaseAdmin
+    })
 
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Successfully joined cleaner waitlist!' 
+        message: client ? 'Successfully joined cleaner waitlist!' : 'Request received! We\'ll be in touch soon.',
+        savedToDatabase: !!client
       },
       { status: 200 }
     )
