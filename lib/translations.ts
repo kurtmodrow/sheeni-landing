@@ -15,20 +15,21 @@ export interface Translations {
   registerAsCustomer: string
   customerDescription: string
   customerFeatures: {
-    residential: string
+    bookExactTime: string
     payUpfront: string
+    uploadPhotos: string
     trackEta: string
-    priorityAccess: string
   }
   
   // Cleaner
   registerAsGenie: string
   genieDescription: string
   genieFeatures: {
-    flexibleScheduling: string
+    getNotified: string
     seePayUpfront: string
+    claimJobs: string
+    flexibleScheduling: string
     backgroundCheck: string
-    priorityAccess: string
   }
   
   // Sections
@@ -42,19 +43,6 @@ export interface Translations {
   revenue: string
   
   // Business Model Details
-  customerFeatures: {
-    bookExactTime: string
-    payUpfront: string
-    uploadPhotos: string
-    trackEta: string
-  }
-  genieFeatures: {
-    getNotified: string
-    seePayUpfront: string
-    claimJobs: string
-    flexibleScheduling: string
-    backgroundCheck: string
-  }
   revenueFeatures: {
     platformFee: string
     subscriptions: string
@@ -155,19 +143,20 @@ export const translations: Record<Language, Translations> = {
     registerAsCustomer: "✨ Register as a Customer ✨",
     customerDescription: "Ready to make your cleaning wishes come true? Register your interest and be first in line when we launch in your area!",
     customerFeatures: {
-      residential: "🏠 Residential & Airbnb cleaning",
+      bookExactTime: "⏰ Book exact time (1 hour, 2 hours, or longer)",
       payUpfront: "💳 Pay upfront with tips",
-      trackEta: "📍 Track Genie ETA",
-      priorityAccess: "⭐ Priority access when we launch"
+      uploadPhotos: "📸 Upload photos and describe the job",
+      trackEta: "📍 Track Genie ETA"
     },
     
     registerAsGenie: "🧞‍♀️ Register as a Genie 🧞‍♂️",
     genieDescription: "Ready to grant cleaning wishes? Join our network of verified Genies and earn money on your own schedule!",
     genieFeatures: {
-      flexibleScheduling: "⏰ Flexible scheduling",
+      getNotified: "🔔 Get notified of new jobs nearby",
       seePayUpfront: "💰 See pay + tips upfront",
-      backgroundCheck: "🔒 Background check required",
-      priorityAccess: "⭐ Priority access when we launch"
+      claimJobs: "⚡ Claim jobs Instacart‑style (first come, first serve)",
+      flexibleScheduling: "⏰ Flexible scheduling",
+      backgroundCheck: "🔒 Background check required"
     },
     
     whatSheeniIs: "What Sheeni Is",
@@ -179,19 +168,6 @@ export const translations: Record<Language, Translations> = {
     genies: "Cleaners (Genies)",
     revenue: "Revenue",
     
-    customerFeatures: {
-      bookExactTime: "Book exact time (1 hour, 2 hours, or longer)",
-      payUpfront: "Pay for time + tip upfront",
-      uploadPhotos: "Upload photos and describe the job",
-      trackEta: "Track ETA & communicate in-app (when live)"
-    },
-    genieFeatures: {
-      getNotified: "Get notified of new jobs nearby",
-      seePayUpfront: "See pay + tip upfront before accepting",
-      claimJobs: "Claim jobs Instacart‑style (first come, first serve)",
-      flexibleScheduling: "Flexible scheduling and transparent pay",
-      backgroundCheck: "Background check required before approval"
-    },
     revenueFeatures: {
       platformFee: "Platform fee/service charge per booking",
       subscriptions: "Future: subscriptions for recurring cleans",
@@ -291,19 +267,20 @@ export const translations: Record<Language, Translations> = {
     registerAsCustomer: "✨ Regístrate como Cliente ✨",
     customerDescription: "¿Listo para hacer realidad tus deseos de limpieza? ¡Registra tu interés y sé el primero en la fila cuando lancemos en tu área!",
     customerFeatures: {
-      residential: "🏠 Limpieza residencial y Airbnb",
+      bookExactTime: "⏰ Reserva tiempo exacto (1 hora, 2 horas, o más)",
       payUpfront: "💳 Paga por adelantado con propinas",
-      trackEta: "📍 Rastrea la ETA del Genio",
-      priorityAccess: "⭐ Acceso prioritario cuando lancemos"
+      uploadPhotos: "📸 Sube fotos y describe el trabajo",
+      trackEta: "📍 Rastrea la ETA del Genio"
     },
     
     registerAsGenie: "🧞‍♀️ Regístrate como Genio 🧞‍♂️",
     genieDescription: "¿Listo para conceder deseos de limpieza? ¡Únete a nuestra red de Genios verificados y gana dinero en tu propio horario!",
     genieFeatures: {
-      flexibleScheduling: "⏰ Horario flexible",
+      getNotified: "🔔 Recibe notificaciones de trabajos cercanos",
       seePayUpfront: "💰 Ve pago + propinas por adelantado",
-      backgroundCheck: "🔒 Verificación de antecedentes requerida",
-      priorityAccess: "⭐ Acceso prioritario cuando lancemos"
+      claimJobs: "⚡ Reclama trabajos estilo Instacart (primero en llegar, primero en ser servido)",
+      flexibleScheduling: "⏰ Horario flexible",
+      backgroundCheck: "🔒 Verificación de antecedentes requerida"
     },
     
     whatSheeniIs: "Qué es Sheeni",
@@ -315,19 +292,6 @@ export const translations: Record<Language, Translations> = {
     genies: "Limpiadores (Genios)",
     revenue: "Ingresos",
     
-    customerFeatures: {
-      bookExactTime: "Reserva tiempo exacto (1 hora, 2 horas, o más)",
-      payUpfront: "Paga por tiempo + propina por adelantado",
-      uploadPhotos: "Sube fotos y describe el trabajo",
-      trackEta: "Rastrea ETA y comunícate en la app (cuando esté activa)"
-    },
-    genieFeatures: {
-      getNotified: "Recibe notificaciones de trabajos cercanos",
-      seePayUpfront: "Ve pago + propina por adelantado antes de aceptar",
-      claimJobs: "Reclama trabajos estilo Instacart (primero en llegar, primero en ser servido)",
-      flexibleScheduling: "Horario flexible y pago transparente",
-      backgroundCheck: "Verificación de antecedentes requerida antes de aprobación"
-    },
     revenueFeatures: {
       platformFee: "Tarifa de plataforma/cargo por servicio por reserva",
       subscriptions: "Futuro: suscripciones para limpiezas recurrentes",

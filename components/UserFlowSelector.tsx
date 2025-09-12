@@ -111,7 +111,7 @@ export default function UserFlowSelector() {
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>{t.customerFeatures.residential}</span>
+                  <span>{t.customerFeatures.bookExactTime}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
@@ -119,11 +119,11 @@ export default function UserFlowSelector() {
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>{t.customerFeatures.trackEta}</span>
+                  <span>{t.customerFeatures.uploadPhotos}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="primary" className="mr-2" />
-                  <span>{t.customerFeatures.priorityAccess}</span>
+                  <span>{t.customerFeatures.trackEta}</span>
                 </div>
               </div>
               
@@ -168,7 +168,7 @@ export default function UserFlowSelector() {
               <div className="space-y-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>{t.genieFeatures.flexibleScheduling}</span>
+                  <span>{t.genieFeatures.getNotified}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
@@ -176,11 +176,11 @@ export default function UserFlowSelector() {
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>{t.genieFeatures.backgroundCheck}</span>
+                  <span>{t.genieFeatures.claimJobs}</span>
                 </div>
                 <div className="flex items-center">
                   <StarDecoration size="sm" color="secondary" className="mr-2" />
-                  <span>{t.genieFeatures.priorityAccess}</span>
+                  <span>{t.genieFeatures.flexibleScheduling}</span>
                 </div>
               </div>
               

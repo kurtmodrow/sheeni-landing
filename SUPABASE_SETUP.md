@@ -80,3 +80,4 @@ CREATE POLICY "Allow anonymous inserts" ON cleaner_waitlist
 
 ## 7. View Data
 You can view submitted waitlist entries in your Supabase dashboard under Table Editor.
+
