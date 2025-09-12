@@ -31,6 +31,7 @@ export default function CleanerForm() {
   const serviceOptions = [
     'Residential Cleaning',
     'Commercial Cleaning',
+    'Airbnb/Vacation Rentals',
     'Deep Cleaning',
     'Move-in/Move-out',
     'Post-Construction',
