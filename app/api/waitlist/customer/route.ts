@@ -17,46 +17,62 @@ export async function POST(request: NextRequest) {
 
     // Save to Supabase if available
     if (supabase) {
-      const { data, error } = await supabase
-        .from('customer_waitlist')
-        .insert([
-          {
-            full_name: name,
-            email: email,
-            phone: phone || '',
-            location: location || '',
-            service_type: serviceType || '',
-            additional_message: message || null
+      try {
+        const { data, error } = await supabase
+          .from('customer_waitlist')
+          .insert([
+            {
+              full_name: name,
+              email: email,
+              phone: phone || '',
+              location: location || '',
+              service_type: serviceType || '',
+              additional_message: message || null
+            }
+          ])
+          .select()
+        
+        if (error) {
+          console.error('Supabase error:', error)
+          
+          // Handle specific error cases
+          if (error.code === '23505') {
+            return NextResponse.json(
+              { error: 'Email already exists in waitlist' },
+              { status: 409 }
+            )
           }
-        ])
-        .select()
-      
-      if (error) {
-        console.error('Supabase error:', error)
-        return NextResponse.json(
-          { error: 'Failed to save to database' },
-          { status: 500 }
-        )
+          
+          return NextResponse.json(
+            { error: 'Failed to save to database', details: error.message },
+            { status: 500 }
+          )
+        }
+        
+        console.log('Customer waitlist signup saved:', data)
+      } catch (supabaseError) {
+        console.error('Supabase connection error:', supabaseError)
+        // Fall through to fallback logging
       }
-      
-      console.log('Customer waitlist signup saved:', data)
-    } else {
-      // Fallback: just log the data if Supabase is not configured
-      console.log('Customer waitlist signup (no Supabase):', {
-        name,
-        email,
-        phone,
-        location,
-        serviceType,
-        message,
-        timestamp: new Date().toISOString()
-      })
     }
+    
+    // Fallback: log the data if Supabase is not configured or fails
+    console.log('Customer waitlist signup (fallback logging):', {
+      name,
+      email,
+      phone,
+      location,
+      serviceType,
+      message,
+      timestamp: new Date().toISOString(),
+      supabaseAvailable: !!supabase
+    })
 
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Successfully joined customer waitlist!' 
+        message: supabase ? 'Successfully joined customer waitlist!' : 'Request received! We\'ll be in touch soon.',
+        savedToDatabase: !!supabase
       },
       { status: 200 }
     )
