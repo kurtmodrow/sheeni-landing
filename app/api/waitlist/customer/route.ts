@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { supabase, supabaseAdmin } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,10 +15,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Save to Supabase if available
-    if (supabase) {
+    // Save to Supabase if available (use admin client to bypass RLS)
+    const client = supabaseAdmin || supabase
+    if (client) {
       try {
-        const { data, error } = await supabase
+        const { data, error } = await client
           .from('customer_waitlist')
           .insert([
             {
@@ -65,14 +66,15 @@ export async function POST(request: NextRequest) {
       serviceType,
       message,
       timestamp: new Date().toISOString(),
-      supabaseAvailable: !!supabase
+      supabaseAvailable: !!client,
+      usingAdminClient: !!supabaseAdmin
     })
 
     return NextResponse.json(
       { 
         success: true, 
-        message: supabase ? 'Successfully joined customer waitlist!' : 'Request received! We\'ll be in touch soon.',
-        savedToDatabase: !!supabase
+        message: client ? 'Successfully joined customer waitlist!' : 'Request received! We\'ll be in touch soon.',
+        savedToDatabase: !!client
       },
       { status: 200 }
     )
